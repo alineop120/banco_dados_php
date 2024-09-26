@@ -51,13 +51,13 @@ Assim que o cliente entra na loja ele pode escolher entre um ou mais amplificado
 # 2. Modelagem de dados
 
 ## 2.1. Modelo Entidade-Relacionamento Conceitual
-[IMAGEM]
+![Mapa_Site](/imagens_readme/mer_conceitual.png)
 
 ## 2.2. Modelo Entidade-Relacionamento Lógico
-[IMAGEM]
+![Mapa_Site](/imagens_readme/mer_logico.png)
 
 # 3. Observações
 - Na tabela que armazenará os amplificadores, cada registro representará cada item (amplificador) existente na loja. Será feito desta forma como uma maneira de simplificar o desenvolvimento do sistema.
 
 # 4. Mapa do Site
-[IMAGEM]
+![Mapa_Site](/imagens_readme/mapa_site.png)
