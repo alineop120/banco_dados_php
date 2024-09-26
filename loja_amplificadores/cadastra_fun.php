@@ -21,9 +21,10 @@
 					<h1> Amplificadores </h1>
 				</div>
 				<div id="menu_global"  class="menu_global">
-					<p align="right"> Olá, <?php include "valida_login.php"; ?> 
+					<p align="right"> 
+					Olá, <?php include "valida_login.php"; ?> 
 					</p>
-					<?php include "menu_local.php"; ?>            
+					<?php include "menu_local.php"; ?>               
 				</div>
 			</div>
 			<div id="conteudo_especifico">
