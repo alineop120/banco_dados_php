@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
@@ -24,15 +24,14 @@
 			<div id="conteudo_especifico">
 				
 				<h1> CADASTRO DE FUNCIONÁRIOS </h1>
-			
-				<form method="" action="">
+				<form method="post" action="processa_cadastra_fun.php">
 					<table class="centralizar">	
 						<tr>
 							<td>
 								<p> Nome: </p>
 							</td>
 							<td>
-								<p> <input type="text" required> </p>
+								<p> <input type="text" name="nome" required> </p>
 							</td>
 						</tr>
 						<tr>
@@ -41,8 +40,8 @@
 							</td>
 							<td>
 								<p> 
-									<input type="radio" value="estoquista" checked> Estoquista
-									<input type="radio" value="vendedor"> Vendedor  </p>
+									<input type="radio" name="funcao" value="estoquista" checked> Estoquista
+									<input type="radio" name="funcao" value="vendedor"> Vendedor  </p>
 							</td>
 						</tr>
 						<tr>
@@ -50,7 +49,7 @@
 								<p> Login:  </p>
 							</td>
 							<td>
-								<p> <input type="text" required>  </p>
+								<p> <input type="text" name="login" required>  </p>
 							</td>
 							
 						</tr>
@@ -59,7 +58,7 @@
 								<p> Senha:  </p>
 							</td>
 							<td>
-								<p> <input type="password" required>  </p>
+								<p> <input type="password" name="senha" required>  </p>
 							</td>
 						</tr>
 						<tr>
