@@ -18,12 +18,12 @@
 	$senha = $_POST["senha"];
 	
 	$sql_consulta = "SELECT login_fun, senha_fun, nome_fun, cod_fun, funcao_fun
-					 FROM funcionario
-					 WHERE
+					FROM funcionario
+					WHERE
 							login_fun = '$login'
-					 AND
+					AND
 							senha_fun = '$senha'
-					 AND
+					AND
 							status_fun = 'ATIVO'";
 	$resultado_consulta = mysqli_query($conectar, $sql_consulta);
 	
@@ -31,7 +31,7 @@
 	
 	if ($linhas == 1) {
 /*      mysqli_fetch_row([tabela]) - estrair os dados de uma tabela e coloca numa variável.
-									 Toda variável local é uma array no php*/
+									Toda variável local é uma array no php*/
 		$registro = mysqli_fetch_row($resultado_consulta);
 		
 		//Criação das credenciais
@@ -41,12 +41,12 @@
 		
 		echo "<script>
 					location.href = ('administracao.php')
-			  </script>";
+			</script>";
 	}
 	else {
 		echo "<script>
-				  alert ('Login ou Senha Incorretos! Digite novamente!!')
-			  </script>";
+				alert ('Login ou Senha Incorretos! Digite novamente!!')
+			</script>";
 	    echo "<script> location.href = ('index.php') </script>";
 	}
 
