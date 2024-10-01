@@ -9,11 +9,11 @@
 	} else {
 		echo "<script>
 				alert ('Você não está logado!!!');
-			  </script>";
-			  
+			</script>";
+
 		echo "<script>
 				location.href = ('index.php');
-			  </script>";
+			</script>";
 	}
 ?>
 
