@@ -39,7 +39,7 @@ Controle de estoque e venda de amplificadores da loja ROCK n' ROLL
 - Total da venda
 
 ## 1.4. Fluxo de trabalho
-Assim que o cliente entra na loja ele pode escolher entre um ou mais amplificadores para comprar. Cada produto escolhido é separado até o cliente decidir finalizar a compra. No momento da finalização, o nome do funcionário vendedor é colocado no registro da venda como forma de controle para saber quem fez a venda, bem como também a descrição do(s) produto(s) adquiridos e o total da compra. Aos funcionários estoquistas, estão destinadas as tarefas para contagem (diária) do estoque (quantidade de amplificadores na loja).
+- Assim que o cliente entra na loja ele pode escolher entre um ou mais amplificadores para comprar. Cada produto escolhido é separado até o cliente decidir finalizar a compra. No momento da finalização, o nome do funcionário vendedor é colocado no registro da venda como forma de controle para saber quem fez a venda, bem como também a descrição do(s) produto(s) adquiridos e o total da compra. Aos funcionários estoquistas, estão destinadas as tarefas para contagem (diária) do estoque (quantidade de amplificadores na loja).
 
 ## 1.5. Funcionamento do sistema
 - O uso do sistema começará com o acesso via login e senha pelos funcionários da loja ou gerente (dono ou responsável). Neste acesso, conforme for o perfil do usuário serão apresentados opções para acesso aos módulos do sistema: módulo de funcionários, módulo de produtos, módulo de vendas e módulo de relatórios. Usuários com perfil de administrador têm acesso total, os com perfil de vendedor acessam apenas o módulo de vendas e os de perfil de estoquista tem acesso somente ao módulo de produtos.
