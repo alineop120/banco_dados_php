@@ -98,14 +98,6 @@
 						}
 					?>
 				</table>
-				
-				
-				
-				
-				
-				
-				
-				
 			</div>	
 			<div id="rodape">
 				<div id="texto_institucional">
