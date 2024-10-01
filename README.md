@@ -3,7 +3,7 @@
 ## 1.1. Objetivos de sistema
 
 ### 1.1.1. Objetivo principal
-Controle de estoque e venda de amplificadores da loja ROCK n' ROLL
+- Controle de estoque e venda de amplificadores da loja ROCK n' ROLL
 
 #### Amplificadores
 
