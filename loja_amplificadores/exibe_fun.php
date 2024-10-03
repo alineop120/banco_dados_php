@@ -32,9 +32,9 @@
 
 			<div id="menu_global"  class="menu_global">
 				<p align="right"> 
-					Olá, <?php include "valida_login.php"; ?> 
+					Olá, <?php include "valida_login.php";?> 
 				</p>
-				<?php include "menu_local.php"; ?>               
+				<?php include "menu_local.php";?>               
 			</div>
 		</div>
 
@@ -43,23 +43,25 @@
 			<?php
 				$conectar = mysqli_connect('localhost', 'root', '', '364975');
 
-				$codigo = $_GET["codigo"];
+				$cod = $_GET["codigo"];
 
-				$sql_pesquisa = "select
-									nome_fun,
-									funcao_fun,
-									status_fun,
-									cod_fun
-								from
-									funcionario";
-				$sql_resultado = mysqli_query($conectar, $sql_pesquisa);
+				$sql_pesquisa = "SELECT 
+									cod_fun, 
+									nome_fun, 
+									funcao_fun, 
+									status_fun 
+								FROM 
+									funcionario
+								WHERE 
+									cod_fun = '$cod'";
+				$resultado_pesquisa = mysqli_query($conectar, $sql_pesquisa);
 
-				$registro = mysqli_fetch_row($tabela_resultado);
+				$registro = mysqli_fetch_row($resultado_pesquisa);
 
-				echo "<p> Nome: $registro[0] </p>";
-				echo "<p> Login: $registro[1] </p>";
-				echo "<p> Função: $registro[2] </p>";
-				echo "<p> Status: $registro[3] </p>";
+				echo "<p> <b>Nome:</b> $registro[0] </p>";
+				echo "<p> <b>Login:</b> $registro[1] </p>";
+				echo "<p> <b>Função:</b> $registro[2] </p>";
+				echo "<p> <b>Status:</b> $registro[3] </p>";
 			?>
 		</div>	
 

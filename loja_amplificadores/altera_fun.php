@@ -1,5 +1,17 @@
 ﻿<?php
 	session_start();
+
+	/*
+		altera_php
+		1° - Conexão com o Banco de Dados.
+		2° - Receber o código do funcionário enviado via link.
+		3° - Pesquisar nome, função, login, senha e status em função do código recebido acima.
+		4° - Extrír os dados da pesquisa acima:
+			SE FOR ADMINISTRADOR
+				* Exibir a senha em forma de HTML.
+			SENÃO
+				* Exibir todos os dados extraídos em forma HTML.
+	*/
 ?>
 
 <!DOCTYPE html>
@@ -29,22 +41,98 @@
 			</div>
 			<div id="conteudo_especifico" class="centralisar">
 				<h1> ALTERAÇÃO DE USUÁRIOS </h1>
-			
-				
+			<?php
+				$conectar = mysqli_connect("localhost", "root", "", "364975");
+				$cod = $_GET["codigo"];
 
+				$sql_pesquisa = "SELECT 
+									cod_fun, 
+									nome_fun, 
+									funcao_fun, 
+									status_fun 
+								FROM 
+									funcionario
+								WHERE 
+									cod_fun = '$cod'";
+				$resultado_pesquisa = mysqli_query($conectar, $sql_pesquisa);
 
+				$registro = mysqli_fetch_row($resultado_pesquisa);
+			?>
+			<form method = "post" action="processa_altera_fun.php">
+			<?php
+				if ($registro[1] == "administrador")
+				{
+			?>
+					<p>
+						Senha:
+						<input type = "password" name = "senha" value = "<?php echo "$registro[3]";?>">
+					</p>
+			<?php
+				} else 
+				{
+			?>
+					<p>
+						Nome:
+						<input type="text" name = "nome" value = "<?php echo "$registro[1]";?>" requiired>
+					</p>
+					<p>
+						Função:
+						<input type="radio" name = "funcao" value = "estoquista"
+							<?php
+								if ($registro[2] == "estoquista") {
+									echo "checked";
+								}
+							?>> Estoquista
+						<input type="radio" name = "funcao" value = "vendedor"
+							<?php
+								if ($registro[2] == "estoquista") {
+									echo "checked";
+								}
+							?>> Vendedor
+					</p>
+					<p>
+						Login:
+						<input type="text" name = "login" value = "<?php echo "$registro[2]";?>" required>
+					</p>
+					<p>
+						Senha:
+						<input type="password" name = "senha" value = "<?php echo "$registro[3]";?>" required>
+					</p>
+					<p>
+						Status:
+						<select name="status">
+							<option value="ativo"
+								<?php
+									if ($registro[4] == "ATIVO") {
+										echo "selected";
+									}
+								?> > Ativo
+							</option>
+							<option value="inativo"
+								<?php
+									if ($registro[4] == "INATIVO") {
+										echo "selected";
+									}
+								?> > Inativo
+							</option>
+						</select>
+					</p>
+			<?php
+				}
+			?>
+			<p>
+				<input type="submit" value = "Alterar Funcionário">
+			</p>
+			</form>
+		</div>	
 
-
-
-				
-			</div>	
-			<div id="rodape">
+		<div id="rodape">
+			<div id="texto_institucional">
 				<div id="texto_institucional">
-					<div id="texto_institucional">
-						<h6> AMPLI - CONTROL </h6> 
-						<h6> Rua do Rock, 666 -- E-mail: contato@ampli_control.com.br -- Fone: (61) 9966 - 6677 </h6> 
-					</div> 
-				</div>
+					<h6> AMPLI - CONTROL </h6> 
+					<h6> Rua do Rock, 666 -- E-mail: contato@ampli_control.com.br -- Fone: (61) 9966 - 6677 </h6> 
+				</div> 
+			</div>
 		</div>
     </body>
 </html>

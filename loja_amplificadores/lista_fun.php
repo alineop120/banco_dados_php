@@ -34,70 +34,81 @@
 					<h1> Amplificadores </h1>
 				</div>
 				<div id="menu_global"  class="menu_global">
-					<p align="right"> 
-					Olá, <?php include "valida_login.php"; ?> 
-					</p>
+					<p align="right"> Olá <?php include "valida_login.php";?> </p>
 					<?php include "menu_local.php"; ?>               
 				</div>
 			</div>
 			<div id="conteudo_especifico">
 				<h1> FUNCIONÁRIOS </h1>
-				<p align="right">
-					<a href="cadastra_fun.php">
-						Cadastro de funcionários
-					</a>				
-				</p>
+				
 				<?php
-					$conectar = mysqli_connect('localhost', 'root', '', '364975');
-
-					$sql_pesquisa = "select
-										nome_fun,
-										funcao_fun,
-										status_fun,
-										cod_fun
-									from
+					$conectar = mysqli_connect ("localhost", "root", "", "364975");			
+				
+					$sql_consulta = "SELECT 
+										cod_fun, 
+										nome_fun, 
+										funcao_fun, 
+										status_fun 
+									FROM 
 										funcionario";
-					$sql_resultado = mysqli_query($conectar, $sql_pesquisa);
+					$resultado_consulta = mysqli_query ($conectar, $sql_consulta);
+						
 				?>
+				<p align="right"> <a href="cadastra_fun.php"> Cadastrar funcionário </a> </p>
 				<table width="100%">
-					<tr height="50px">
+					<tr>
 						<td>
-							NOME
+							<p> Nome </p>
 						</td>
 						<td>
-							FUNÇÃO
+							<p> Função </p>
 						</td>
 						<td>
-							STATUS
+							<p> Status </p>
 						</td>
 						<td>
-							AÇÃO
+							<p> Ação </p>
+						</td>
+					</tr>
+					<?php		
+						while ($registro = mysqli_fetch_row($resultado_consulta)) 
+						{											
+					?>						
+					<tr>
+						<td>
+							<p>
+								<a href="exibe_fun.php?codigo=<?php echo $registro[0]?>"> 
+									<?php 
+										echo "$registro[1]";
+									?>
+								</a>
+							</p>
+						</td>
+						<td>
+							<p>									 
+								<?php echo "$registro[2]"; ?>
+							</p>
+						</td>
+						<td>
+							<p>									 
+								<?php 
+									echo "$registro[3]";
+								?>
+							</p>
+						</td>
+					
+						<td>
+							<p>
+								<a href="altera_fun.php?codigo=<?php echo $registro[0]?>">
+									Alterar	
+								</a>
+							</p>
 						</td>
 					</tr>
 					<?php
-						while ($registro = mysqli_fetch_row($sql_resultado)) 
-						{
-					?>
-							<tr height="50px">
-								<td>
-									<a href="exibe_fun.php?codigo=<?php echo $registro[3]?>">
-										<?php echo $registro[0]; ?>
-									</a>
-								</td>
-								<td>
-									<?php echo $registro[1]; ?>
-								</td>
-								<td>
-									<?php echo $registro[2]; ?>
-								</td>
-								<td>
-									alterar
-								</td>
-							</tr>
-					<?php
 						}
 					?>
-				</table>
+				</table>		
 			</div>	
 			<div id="rodape">
 				<div id="texto_institucional">
