@@ -11,6 +11,10 @@
 				* Exibir a senha em forma de HTML.
 			SENÃO
 				* Exibir todos os dados extraídos em forma HTML.
+		
+		5° Configuração no formulário
+			* Necessaário enviar o códgo para o outro arquivo.
+			* Necessita enviar a função no formulário do administrador.
 	*/
 ?>
 
@@ -41,90 +45,94 @@
 			</div>
 			<div id="conteudo_especifico" class="centralisar">
 				<h1> ALTERAÇÃO DE USUÁRIOS </h1>
-			<?php
-				$conectar = mysqli_connect("localhost", "root", "", "364975");
-				$cod = $_GET["codigo"];
-
-				$sql_pesquisa = "SELECT 
-									cod_fun, 
-									nome_fun, 
-									funcao_fun, 
-									status_fun 
-								FROM 
-									funcionario
-								WHERE 
-									cod_fun = '$cod'";
-				$resultado_pesquisa = mysqli_query($conectar, $sql_pesquisa);
-
-				$registro = mysqli_fetch_row($resultado_pesquisa);
-			?>
-			<form method = "post" action="processa_altera_fun.php">
-			<?php
-				if ($registro[1] == "administrador")
-				{
-			?>
-					<p>
-						Senha:
-						<input type = "password" name = "senha" value = "<?php echo "$registro[3]";?>">
-					</p>
-			<?php
-				} else 
-				{
-			?>
-					<p>
-						Nome:
-						<input type="text" name = "nome" value = "<?php echo "$registro[1]";?>" requiired>
-					</p>
-					<p>
-						Função:
-						<input type="radio" name = "funcao" value = "estoquista"
-							<?php
-								if ($registro[2] == "estoquista") {
-									echo "checked";
-								}
-							?>> Estoquista
-						<input type="radio" name = "funcao" value = "vendedor"
-							<?php
-								if ($registro[2] == "estoquista") {
-									echo "checked";
-								}
-							?>> Vendedor
-					</p>
-					<p>
-						Login:
-						<input type="text" name = "login" value = "<?php echo "$registro[2]";?>" required>
-					</p>
-					<p>
-						Senha:
-						<input type="password" name = "senha" value = "<?php echo "$registro[3]";?>" required>
-					</p>
-					<p>
-						Status:
-						<select name="status">
-							<option value="ativo"
-								<?php
-									if ($registro[4] == "ATIVO") {
-										echo "selected";
-									}
-								?> > Ativo
-							</option>
-							<option value="inativo"
-								<?php
-									if ($registro[4] == "INATIVO") {
-										echo "selected";
-									}
-								?> > Inativo
-							</option>
-						</select>
-					</p>
-			<?php
-				}
-			?>
-			<p>
-				<input type="submit" value = "Alterar Funcionário">
-			</p>
-			</form>
-		</div>	
+				
+				<?php
+					$conectar = mysqli_connect ("localhost", "root", "", "364975");
+						
+					$cod = $_GET["codigo"];
+										
+					$sql_pesquisa = "SELECT  nome_fun, funcao_fun, login_fun, senha_fun, status_fun
+									FROM funcionario
+									WHERE cod_fun = '$cod'";
+					$resultado_pesquisa = mysqli_query ($conectar, $sql_pesquisa);	
+						
+					$registro = mysqli_fetch_row($resultado_pesquisa);
+				?>
+				<form method="post" action="processa_altera_fun.php">
+					<input type="hidden" name="codigo" value="<?php echo "$cod"; ?>">
+					<input type="hidden" name="funcao" value="<?php echo "$registro[1]"; ?>">
+					<?php 
+						if ($registro[1] <> "administrador") 
+						{ 
+					?>
+							<p> 
+								Nome: 
+								<input type="text" name="nome" value="<?php echo "$registro[0]";?>" required>
+							</p>
+							<p> 
+								funcao:  
+								<input type="radio" name="funcao" value="estoquista" 
+									<?php
+										if ($registro[1] == "estoquista") {
+											echo "checked";
+										}
+									?>> Estoquista
+									<input type="radio" name="funcao" value="vendedor"
+									<?php
+										if ($registro[1] == "vendedor") {
+											echo "checked";
+										}
+									?>> Vendedor  
+							</p>
+							<p> 
+								Login:
+								<input type="text" name="login" value="<?php echo "$registro[2]";?>" required>
+							</p>
+							<p> 
+								Senha: 
+								<input type="password" name="senha" value="<?php echo "$registro[3]";?>" required>
+							</p>
+							<p> 
+								Status:
+								<select name="status">
+									<option value="ativo"
+										<?php
+											if ($registro[4] == "ativo") {
+												echo "selected";
+											}
+										?> > Ativo 
+									</option>
+									<option value="inativo"<?php
+										if ($registro[4] == "inativo") {
+											echo "selected";
+										}
+										?> > Inativo 
+									</option>
+								</select>
+							</p>
+							<p> 
+								<input type="submit" value="Alterar Funcionário">
+							</p>
+									
+					<?php
+						}
+						else 
+						{
+					?>
+							<p> Nome: <?php echo "$registro[0]";?> </p>
+							<p> funcao: <?php echo "$registro[1]";?> </p>
+							<p> Login: <?php echo "$registro[2]";?> </p>
+							<p> 
+								Senha:  
+								<input type="password" name="senha" value="<?php echo "$registro[3]";?>" required>  
+							</p>
+							<p> Status:  Ativo </p>
+							<p> <input type="submit" value="Alterar Usuario">  </p>									
+					<?php
+						}
+					?>
+				</form>				
+			</div>	
 
 		<div id="rodape">
 			<div id="texto_institucional">
