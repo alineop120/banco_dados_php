@@ -1,4 +1,20 @@
 ﻿/* menu_global */
+@keyframes colorChange {
+    0% { color: #d4347c; }
+    25% { color: #b80090; }
+    50% { color: #0fc3e8; }
+    75% { color: #f99400; }
+    100% { color: #d4347c; } /* Volta à cor inicial */
+}
+
+#menu_global p {
+    font-weight: bold; /* Deixa o texto em negrito */
+    text-align: right; /* Alinha o texto à direita */
+}
+
+#menu_global p span {
+    animation: colorChange 4s infinite; /* Animação de 4 segundos que se repete indefinidamente */
+}
 
 .menu_global li {
     display: inline-flex;
@@ -8,7 +24,7 @@
 
 .menu_global a {
     text-decoration: none;
-    color: black;
+    color: #333;
 }
 
 .menu_global a:hover {

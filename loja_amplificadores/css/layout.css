@@ -17,7 +17,7 @@
     grid-gap: 5px;
     border-radius: 10px;
     border: solid;
-    color: black;	
+    color: #333;	
     justify-content: space-between;
 }
 
@@ -50,9 +50,45 @@
 
 /* div CONTEUDO_ESPECIFICO  */
 #conteudo_especifico {
-	padding: 5px;
-	margin: auto 150px auto 150px;
-	text-align: center;
+    max-width: 400px; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centraliza o formulário */
+    padding: 20px; /* Espaçamento interno */
+}
+
+h1 {
+    text-align: center; /* Centraliza o título */
+    color: #333; /* Cor do texto */
+}
+
+form p {
+    margin-bottom: 15px; /* Espaçamento entre os campos */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Largura total */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda do campo */
+    border-radius: 4px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+input[type="submit"] {
+    width: 100%; /* Ajuste a largura conforme necessário */
+    padding: 10px; /* Espaçamento interno */
+    border: none; /* Remove a borda padrão */
+    border-radius: 4px; /* Bordas arredondadas */
+    background-color: #d4347c; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    transition: background-color 0.3s; /* Efeito de transição */
+    margin: 0 auto; /* Centraliza o botão */
+    display: block; /* Faz o botão ser um bloco para aplicar a margem */
+}
+
+input[type="submit"]:hover {
+    background-color: #a3285f; /* Cor do botão ao passar o mouse */
 }
 
 /* div RODAPE */
@@ -65,7 +101,7 @@
 	grid-gap: 5px;
 	border-radius: 10px;
 	border: solid;
-	color: black;	
+	color: #333;	
 	justify-content: space-between;
 }
 

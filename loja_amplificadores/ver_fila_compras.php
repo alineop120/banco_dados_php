@@ -17,8 +17,11 @@
 	<div id="principal">
 		<div id="topo">
 			<div id="logo">
-				<h1> ROCK N´ROLL </h1>
-				<h1> Amplificadores </h1>
+				<img src="img/rocker_output_dribbble.gif" alt="logo">
+				<div class="titles"> <!-- Contêiner para os títulos -->
+					<h1> ROCK N´ROLL </h1>
+					<h1> Amplificadores </h1>
+				</div>
 			</div>
 
 			<div id="menu_global"  class="menu_global">

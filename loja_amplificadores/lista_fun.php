@@ -38,7 +38,7 @@
 			</div>
 		
 			<div id="menu_global"  class="menu_global">
-				<p align="right"> Olá <?php include "valida_login.php";?> </p>
+				<p align="right"> Olá, <?php include "valida_login.php";?> </p>
 				<?php include "menu_local.php"; ?>               
 			</div>
 		</div>
@@ -55,21 +55,21 @@
 			<p align="right"> <a href="cadastra_fun.php"> Cadastrar funcionário </a> </p>
 			<table width="100%">
 				<tr>
-					<td>
+					<th>
 						<p> Nome </p>
-					</td>
+					</th>
 
-					<td>
+					<th>
 						<p> Função </p>
-					</td>
+					</th>
 
-					<td>
+					<th>
 						<p> Status </p>
-					</td>
+					</th>
 
-					<td>
+					<th>
 						<p> Ação </p>
-					</td>
+					</th>
 				</tr>
 				<?php		
 					while ($registro = mysqli_fetch_row($resultado_consulta)) 

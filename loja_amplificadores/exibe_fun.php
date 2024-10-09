@@ -49,7 +49,7 @@
 
 				$cod = $_GET["codigo"];
 
-				$sql_pesquisa = "SELECT cod_fun, nome_fun, funcao_fun, status_fun 
+				$sql_pesquisa = "SELECT nome_fun, login_fun, funcao_fun, status_fun 
 								FROM funcionario
 								WHERE cod_fun = '$cod'";
 				$resultado_pesquisa = mysqli_query($conectar, $sql_pesquisa);
