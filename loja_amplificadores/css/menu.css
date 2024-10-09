@@ -1,6 +1,4 @@
-﻿
-/* menu_global */
-
+﻿/* menu_global */
 
 .menu_global li {
     display: inline-flex;
@@ -14,9 +12,6 @@
 }
 
 .menu_global a:hover {
-    color: red;
+    color: #d4347c;
     transition: ease 0.5s;
 }
-
-
-

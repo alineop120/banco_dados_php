@@ -6,7 +6,7 @@
 			Se existirem
 				ENTÃO entram no sistema, arquivo administrador.php
 			SENÃO 
-			    Mensagem de erro
+				Mensagem de erro
 				Voltar para index.php
 	*/
 	session_start();
@@ -43,11 +43,12 @@
 					location.href = ('administracao.php')
 			</script>";
 	}
-	else {
+	else 
+	{
 		echo "<script>
 				alert ('Login ou Senha Incorretos! Digite novamente!!')
 			</script>";
-	    echo "<script> location.href = ('index.php') </script>";
+		echo "<script> location.href = ('index.php') </script>";
 	}
 
 ?>

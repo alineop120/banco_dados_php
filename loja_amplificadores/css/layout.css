@@ -1,40 +1,59 @@
-﻿#principal {
+﻿body {
+	background-color:#b2c9b0; /* Cor de fundo para toda a página */
+    margin: 0; /* Remove margens padrão */
+}
+
+#principal {
 	margin: 50px;
 	font-family: arial;
 }
 
 /* div TOPO */
 #topo {	
-	padding: 5px;
-	display: grid;
-	grid-template-columns: auto auto;
-	margin: 0px auto 20px auto;	
-	grid-gap: 5px;
-	border-radius: 10px;
-	border: solid;
-	color: black;	
-	justify-content: space-between;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 0px auto 20px auto;	
+    grid-gap: 5px;
+    border-radius: 10px;
+    border: solid;
+    color: black;	
+    justify-content: space-between;
+}
+
+#logo {
+    display: flex; /* Ativa o flexbox */
+    flex-direction: row; /* Alinha os itens na horizontal */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    padding: 10px; /* Ajuste o espaçamento interno conforme necessário */
+}
+
+#logo img {
+    max-width: 100px; /* Ajuste a largura da imagem conforme necessário */
+    margin-right: 10px; /* Espaço entre a imagem e os títulos */
+}
+
+.titles {
+    display: flex; /* Ativa o flexbox para os títulos */
+    flex-direction: column; /* Alinha os títulos na vertical */
 }
 
 #logo h1 {
-	line-height: 10px;
-	word-spacing: 0px; 
+    line-height: 1.2; /* Ajusta o espaçamento entre linhas */
+    margin: 0; /* Remove a margem padrão */
 }
 
-#logo h4{
-	line-height: 0px;
-	word-spacing: 40px; 
+#logo h4 {
+    line-height: 1.2; /* Ajusta o espaçamento entre linhas */
+    margin: 0; /* Remove a margem padrão */
 }
-
 
 /* div CONTEUDO_ESPECIFICO  */
-#conteudo_especifico {	
+#conteudo_especifico {
 	padding: 5px;
 	margin: auto 150px auto 150px;
 	text-align: center;
 }
-
-
 
 /* div RODAPE */
 #rodape {	
@@ -58,6 +77,5 @@
 
 
 .borda {
-	border: solid black 2px;
+	border: solid #6c1c3c 2px;
 }
-

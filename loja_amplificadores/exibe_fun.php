@@ -24,11 +24,15 @@
 </head>
 <body>
     <div id="principal">
+
 		<div id="topo">
-			<div id="logo">
-				<h1> ROCK N´ROLL </h1>
-				<h1> Amplificadores </h1>
-			</div>
+				<div id="logo">
+					<img src="img/rocker_output_dribbble.gif" alt="logo">
+					<div class="titles"> <!-- Contêiner para os títulos -->
+						<h1> ROCK N´ROLL </h1>
+						<h1> Amplificadores </h1>
+					</div>
+				</div>
 
 			<div id="menu_global"  class="menu_global">
 				<p align="right"> 
@@ -45,15 +49,9 @@
 
 				$cod = $_GET["codigo"];
 
-				$sql_pesquisa = "SELECT 
-									cod_fun, 
-									nome_fun, 
-									funcao_fun, 
-									status_fun 
-								FROM 
-									funcionario
-								WHERE 
-									cod_fun = '$cod'";
+				$sql_pesquisa = "SELECT cod_fun, nome_fun, funcao_fun, status_fun 
+								FROM funcionario
+								WHERE cod_fun = '$cod'";
 				$resultado_pesquisa = mysqli_query($conectar, $sql_pesquisa);
 
 				$registro = mysqli_fetch_row($resultado_pesquisa);
