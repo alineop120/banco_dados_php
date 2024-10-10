@@ -31,7 +31,7 @@
 
     if ($sql_resultado_cadastrar == true) {
         echo "<script>
-                    alert ('Amplificador cadastrado realizado com sucesso')
+                    alert ('$modelo cadastrado realizado com sucesso')
                 </script>";
             echo "<script>
                     location.href = ('cadastra_amp.php')
@@ -39,7 +39,7 @@
     } 
     else {
             echo "<script>
-                    alert ('Ocorreu um erro no servidor. Amplificador não cadastrado. Volte e tente de novo')
+                    alert ('Ocorreu um erro no servidor ao cadastrar. Volte e tente de novo')
                 </script>";
                 echo "<script>
                 location.href = ('cadastra_amp.php')
