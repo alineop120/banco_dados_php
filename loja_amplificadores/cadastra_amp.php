@@ -1,5 +1,18 @@
 ﻿<?php
 	session_start();
+
+	/*
+		cadastra_amp.php
+		1° Configuração o formulário.
+			* method: GET
+			* action: processa_cadastra_amp.php
+			* name(s): Marca,
+						Modelo,
+						Preço,
+						Foto,
+						Tipo
+			* enctype: multipart/form-data
+	*/
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +48,7 @@
 		<div id="conteudo_especifico">
 			<h1> CADASTRO DE AMPLIFICADORES </h1>
 			
-			<form method="" action="" >
+			<form method="get" action="processa_cadastra_amp.php" enctype="multipart/form-data" >
 				<p> Marca:  <input type="text" required> </p>
 				<p> Modelo:  <input type="text" required> </p>
 				<p> Preço:  <input type="text" required> </p>
