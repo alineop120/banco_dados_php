@@ -48,7 +48,7 @@
 		<div id="conteudo_especifico">
 			<h1> CADASTRO DE AMPLIFICADORES </h1>
 			
-			<form method="get" action="processa_cadastra_amp.php" enctype="multipart/form-data" >
+			<form method="post" action="processa_cadastra_amp.php" enctype="multipart/form-data" >
 				<p> Marca:  <input type="text" required> </p>
 				<p> Modelo:  <input type="text" required> </p>
 				<p> Preço:  <input type="text" required> </p>
