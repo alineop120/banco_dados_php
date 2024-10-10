@@ -15,10 +15,10 @@
 
     $conectar = mysqli_connect("localhost", "root", "", "364975");
 
-    $marca = $_GET["marca"];
-    $modelo = $_GET["modelo"]; 
-    $preco = $_GET["preco"]; 
-    $tipo = $_GET["tipo"]; 
+    $marca = $_POST["marca"];
+    $modelo = $_POST["modelo"]; 
+    $preco = $_POST["preco"]; 
+    $tipo = $_POST["tipo"]; 
     $foto = $_FILES["foto"];
 
     $foto_nome = "img/".$foto["name"];
