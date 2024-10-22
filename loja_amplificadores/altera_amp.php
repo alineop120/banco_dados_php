@@ -1,5 +1,14 @@
 ﻿<?php
 	session_start();
+
+	/*
+		altera_amp.php
+		1° Conexão com o Banco de Dados.
+		2° Recebe o código enviado pelo like.
+		3° Pesquisa, marca, modelo, preço e tipo em função do código recebido acima.
+		4° Extrair cada dado pesquisado acima.
+		5° Exibir os dados extraídos acima em formado HTML.
+	*/
 ?>
 
 <!DOCTYPE html>
@@ -35,15 +44,59 @@
 
 		<div id="conteudo_especifico">
 			<h1> ALTERAÇÃO DE AMPLIFICADORES </h1>
-            
-			
-			
-			
-			
-			
-			
-			
-			
+            <?php
+				$conectar = mysqli_connect("localhost", "root", "", "364975");
+
+				$cod = $_GET["codigo"];
+
+				$sql_pesquisa = "SELECT marca_amp, modelo_amp, tipo_amp, preco_amp
+								FROM amplificador
+								WHERE cod_amp = '$cod'";
+				$resultado_pesquisa = mysqli_query($conectar, $sql_pesquisa);
+
+				$registro = mysqli_fetch_row($resultado_pesquisa);
+			?>
+			<form method="post" action="processa_altera_amp.php" enctype="multipart/form-data">
+				<input type="hidden" name="codigo" value="<?php echo $cod; ?>">
+				<p>
+					Marca: <input type="text" name="marca" required value="<?php echo "$registro[0]"; ?>">
+				</p>
+				<p>
+					Modelo: <input type="text" name="modelo" required value="<?php echo "$registro[1]"; ?>">
+				</p>
+				<p>
+					Preço: <input type="text" name="preco" required value="<?php echo "$registro[3]"; ?>">
+				</p>
+				<p>
+					Foto: <input type="file" name="foto">
+				</p>
+				<p>
+					Tipo: <select name="tipo">
+							<option value="guitarra"
+								<?php
+									if ($registro[2] == "guitarra") {
+										echo "selected";
+									}
+								?> > Guitarra 
+							</option>
+							<option value="baixo"
+								<?php
+									if ($registro[2] == "baixo") {
+										echo "selected";
+									}
+								?> > Contra-baixo
+							</option>
+							<option value="violao"
+								<?php
+									if ($registro[2] == "violao") {
+										echo "selected";
+									}
+								?> > Violão
+							</option>
+						</select>
+				</p>
+				<p> <input type="submit" value="Alterar Amplificador"></p>
+			</form>
 		</div>
 
 		<div id="rodape">
