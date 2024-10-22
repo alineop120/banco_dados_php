@@ -68,7 +68,7 @@
 				<input type="hidden" name="funcao" value="<?php echo "$registro[1]"; ?>">
 				<?php 
 					if ($registro[1] <> "administrador") 
-					{ 
+					{
 				?>
 						<p> 
 							Nome: 
