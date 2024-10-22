@@ -15,6 +15,7 @@
     </head>
     <body>
         <div id="principal">
+			
 			<div id="topo">
 				<div id="logo">
 					<h1> ROCK N´ROLL </h1>
@@ -47,7 +48,8 @@
 							<td>
 								<p> 
 									<input type="radio" name="funcao" value="estoquista" checked> Estoquista
-									<input type="radio" name="funcao" value="vendedor"> Vendedor  </p>
+									<input type="radio" name="funcao" value="vendedor"> Vendedor  
+								</p>
 							</td>
 						</tr>
 						<tr>
@@ -75,6 +77,7 @@
 					</table>
 				</form>
 			</div>	
+
 			<div id="rodape">
 				<div id="texto_institucional">
 					<div id="texto_institucional">
