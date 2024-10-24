@@ -21,21 +21,21 @@
     $sql_resultado_alteracao = mysqli_query($conectar, $sql_altera);
 
     if ($sql_resultado_alteracao == true) 
-            {
-                echo "<script>
-                        alert ('Amplificador colocado na fila de compra com sucesso!')
-                    </script>";
-                echo "<script>
-                        location.href = ('vendas.php')
-                    </script>";
-            }
-            else
-            {
-                echo "<script>
-                        alert ('Ocorreu um erro no servidor. Tente de novo')
-                    </script>";
-                echo "<script>
-                        location.href = ('vendas.php')
-                    </script>";
-            }
+    {
+        echo "<script>
+                alert ('Amplificador colocado na fila de compra com sucesso!')
+            </script>";
+        echo "<script>
+                location.href = ('vendas.php')
+            </script>";
+    }
+    else
+    {
+        echo "<script>
+                alert ('Ocorreu um erro no servidor. Tente de novo')
+            </script>";
+        echo "<script>
+                location.href = ('vendas.php')
+            </script>";
+    }
 ?>

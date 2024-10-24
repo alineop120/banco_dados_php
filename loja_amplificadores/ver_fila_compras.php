@@ -1,5 +1,16 @@
 ﻿<?php
 	session_start();
+
+	/*
+		FUNCIONALIDADE:
+			1° Conexão com o Banco de dados.
+			2° Pesquisar marca, modelo, tipo, preço e código, que está dentro dos likes, onde o campo fila_compra_amp.php é igual a letra 'S'.
+		Loop -----> {
+			3° Extrair cada registro da pesquisa acima.
+			4° Exibir cada registro extraído acima em tabela HTML.
+		} -----> Loop
+			5° Exibir o total da fila.
+	*/
 ?>
 
 <!DOCTYPE html>
@@ -33,16 +44,67 @@
 		</div>
 	
 		<div id="conteudo_especifico">
-			<h1> AMPLIFICADORES </h1>
-			
-			
-			
-			
-			
-			
-			
-			
-			
+			<h1> FILA DE COMPRAS </h1>
+			<?php
+				$conectar = mysqli_connect('localhost', 'root', '', '364975');
+
+				$sql_consulta = "SELECT cod_amp, marca_amp, modelo_amp, tipo_amp, preco_amp
+								FROM amplificador
+								WHERE fila_compra_amp = 'S'";
+				$resultado_consulta = mysqli_query ($conectar, $sql_consulta);
+			?>
+			<table width="100%">
+				<tr height="50px">
+					<td>
+						Marca
+					</td>
+					<td>
+						Modelo
+					</td>
+					<td>
+						Tipo
+					</td>
+					<td>
+						Preço
+					</td>
+					<td>
+						Ação
+					</td>
+				</tr>
+			<?php
+				$valor_total = 0;
+				while ($registro = mysqli_fetch_row($resultado_consulta)) {
+			?>
+				<tr height="50px">
+					<td>
+						<?php echo $registro[1]; ?>
+					</td>
+					<td>
+						<a href="exibe_amp.php?codigo=<?php echo $registro[0]?>">
+							<?php
+								echo "$registro[2]";
+							?>
+						</a>
+					</td>
+					<td>
+						<?php echo $registro[3]; ?>
+					</td>
+					<td>
+						<?php echo $registro[4]; 
+						$valor_total = $$valor_total + $registro[4];
+						?>
+					</td>
+					<td>
+					<a href="processa_retira_fila.php?codigo=<?php echo $registro[0]?>">
+							Retirar da fila de compras
+						</a>
+					</td>
+				</tr>
+			<?php		
+				}
+			?>
+			</table>
+			<p> Total: <?php echo $valor_total; ?></p>
 			<p> <a href="vendas.php"> Voltar a seleção de amplificadores </a> </p>
 			<p> <a href="recibo_compra.php"> Finalizar venda </a> </p>						
 		</div>	

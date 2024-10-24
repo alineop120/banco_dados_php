@@ -4,11 +4,11 @@
 	/*
 		FUNCIONALIDADE:
 			1° Conexão com o Bando de Dados
-			2° Pesquisar marca, modelo, tipo, preço e código, onde o campo fila_compra_amp é igual a 'n'.
-			Loop -----> {
-				3° Extrair cada registro da pesquisa acima.
-				4° Exibir cada registro extraído acima em tabela HTML
-			} -----> Loop
+			2° Pesquisar marca, modelo, tipo, preço e código, onde o campo fila_compra_amp é igual a 'N'.
+		Loop -----> {
+			3° Extrair cada registro da pesquisa acima.
+			4° Exibir cada registro extraído acima em tabela HTML
+		} -----> Loop
 	*/
 ?>
 
@@ -45,13 +45,64 @@
 		
 		<div id="conteudo_especifico">
 			<h1> VENDAS </h1>							
-			
-			
-			
-			
-			
-			
-			
+			<?php
+				$conectar = mysqli_connect('localhost', 'root', '', '364975');
+
+				$sql_consulta = "SELECT cod_amp, marca_amp, modelo_amp, tipo_amp, preco_amp
+								FROM amplificador
+								WHERE fila_compra_amp = 'N'";
+				$resultado_consulta = mysqli_query ($conectar, $sql_consulta);
+			?>
+			<table width="100%">
+				<tr height="50px">
+					<td>
+						Marca
+					</td>
+					<td>
+						Modelo
+					</td>
+					<td>
+						Tipo
+					</td>
+					<td>
+						Preço
+					</td>
+					<td>
+						Ação
+					</td>
+				</tr>
+			<?php
+				while ($registro = mysqli_fetch_row($resultado_consulta)) {
+			?>
+				<tr height="50px">
+					<td>
+						<?php echo $registro[1]; ?>
+					</td>
+					<td>
+						<a href="exibe_amp.php?codigo=<?php echo $registro[0]?>">
+							<?php
+								echo "$registro[2]";
+							?>
+						</a>
+					</td>
+					<td>
+						<?php echo $registro[3]; ?>
+					</td>
+					<td>
+						<?php echo $registro[4]; 
+						$valor_total = $$valor_total + $registro[4];
+						?>
+					</td>
+					<td>
+					<a href="processa_retira_fila.php?codigo=<?php echo $registro[0]?>">
+							Retirar da fila de compras
+						</a>
+					</td>
+				</tr>
+			<?php		
+				}
+			?>
+			</table>
 			
 			
 			
