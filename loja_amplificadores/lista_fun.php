@@ -2,16 +2,16 @@
 	session_start();
 
 	/*
-		lista_fun.php
-		1° - Conexão com o Banco de Dados.
-		2° - Pesquisam nome, função, status e código dos funcionarios.
-		3° - Extrair os dados da pesquisa acima.
-		4° - Exibir os dados extraídos acima em tabela HTML.
+		FUNCIONALIDADE:
+			1° - Conexão com o Banco de Dados.
+			2° - Pesquisam nome, função, status e código dos funcionarios.
+			3° - Extrair os dados da pesquisa acima.
+			4° - Exibir os dados extraídos acima em tabela HTML.
 
-		=> Para exibir dados
-			* Pesquisa o que você quer mostrar.
-			* Extrair os dados pesquisados acima.
-			* Exibir o(s) dados(s) extraídos acima em HTML.
+			=> Para exibir dados
+				* Pesquisa o que você quer mostrar.
+				* Extrair os dados pesquisados acima.
+				* Exibir o(s) dados(s) extraídos acima em HTML.
 	*/
 ?>
 

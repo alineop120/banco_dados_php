@@ -2,12 +2,12 @@
 	session_start();
 
 	/*
-		altera_amp.php
-		1° Conexão com o Banco de Dados.
-		2° Recebe o código enviado pelo like.
-		3° Pesquisa, marca, modelo, preço e tipo em função do código recebido acima.
-		4° Extrair cada dado pesquisado acima.
-		5° Exibir os dados extraídos acima em formado HTML.
+		FUNCIONALIDADE:
+			1° Conexão com o Banco de Dados.
+			2° Recebe o código enviado pelo like.
+			3° Pesquisa, marca, modelo, preço e tipo em função do código recebido acima.
+			4° Extrair cada dado pesquisado acima.
+			5° Exibir os dados extraídos acima em formado HTML.
 	*/
 ?>
 

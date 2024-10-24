@@ -1,20 +1,20 @@
 <?php
     /*
-        processa_altera_fun.php
-        1° Conexão com o Banco de Dados.
-        2° Receber código, nome, função, login, senha e status.
-        3° Verificar se o login recebido já existe (pesquisar todos menos o do usuário em alteração)
-        SE EXISTIR
-            * Mensagem de Erro.
-            * Vai para altera_fun.php
-        SENÃO
-            * Efetua a alteração
-            SE ALTEROU
-                * Mensagem de Sucesso
-                * Vai para lista_fun.php
-            SENÃO
-                * Mensagem de Erro
+        FUNCIONALIDADE:
+            1° Conexão com o Banco de Dados.
+            2° Receber código, nome, função, login, senha e status.
+            3° Verificar se o login recebido já existe (pesquisar todos menos o do usuário em alteração)
+            SE EXISTIR
+                * Mensagem de Erro.
                 * Vai para altera_fun.php
+            SENÃO
+                * Efetua a alteração
+                SE ALTEROU
+                    * Mensagem de Sucesso
+                    * Vai para lista_fun.php
+                SENÃO
+                    * Mensagem de Erro
+                    * Vai para altera_fun.php
     */
     session_start();
 

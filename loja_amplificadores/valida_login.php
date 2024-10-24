@@ -1,6 +1,6 @@
 <?php
 /*
-    VALIDA_LOGIN.PHP
+    FUNCIONALIDADE:
         Segurança
 */
 	if (isset($_SESSION["nome"])) {

@@ -1,16 +1,16 @@
 <?php
     /*
-        processa_cadastra_amp.php
-        1° Conexão com o Banco de Dados
-        2° Receber os dados: marca, modelo, preço, tipo e dados do arquivo de imagem.
-        3° Upload da imagem selecionada.
-        4° Inserir os dados recebidos no Banco de Dados
-            SE inseriu
-                * Mensagem de sucesso
-                * Vai para cadastra_amp.php
-            SENÂO 
-                * Mensagem de erro
-                * Vai para cadastra_amp.php
+        FUNCIONALIDADE:
+            1° Conexão com o Banco de Dados
+            2° Receber os dados: marca, modelo, preço, tipo e dados do arquivo de imagem.
+            3° Upload da imagem selecionada.
+            4° Inserir os dados recebidos no Banco de Dados
+                SE inseriu
+                    * Mensagem de sucesso
+                    * Vai para cadastra_amp.php
+                SENÂO 
+                    * Mensagem de erro
+                    * Vai para cadastra_amp.php
     */
 
     $conectar = mysqli_connect("localhost", "root", "", "364975");

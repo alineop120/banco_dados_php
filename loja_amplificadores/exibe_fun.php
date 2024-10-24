@@ -2,12 +2,12 @@
 	session_start();
 
 	/*
-		exibe_fun.php
-		1° - Conexâo com o Banco de Dados.
-		2° - Receber o código do funcionário enviado via line.
-		3° - Pesquisar nome, login, função e status em função do código recebido acima.
-		4° - Extraír os dados da pesquisa acima.
-		5° - exibir os dados extraídos em parágrafos em HTML.
+		FUNCIONALIDADE:
+			1° - Conexâo com o Banco de Dados.
+			2° - Receber o código do funcionário enviado via line.
+			3° - Pesquisar nome, login, função e status em função do código recebido acima.
+			4° - Extraír os dados da pesquisa acima.
+			5° - exibir os dados extraídos em parágrafos em HTML.
 	*/
 ?>
 

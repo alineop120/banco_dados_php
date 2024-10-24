@@ -2,19 +2,19 @@
 	session_start();
 
 	/*
-		altera_php
-		1° - Conexão com o Banco de Dados.
-		2° - Receber o código do funcionário enviado via link.
-		3° - Pesquisar nome, função, login, senha e status em função do código recebido acima.
-		4° - Extrír os dados da pesquisa acima:
-			SE FOR ADMINISTRADOR
-				* Exibir a senha em forma de HTML.
-			SENÃO
-				* Exibir todos os dados extraídos em forma HTML.
-		
-		5° Configuração no formulário
-			* Necessaário enviar o códgo para o outro arquivo.
-			* Necessita enviar a função no formulário do administrador.
+		FUNCIONALIDADE:
+			1° - Conexão com o Banco de Dados.
+			2° - Receber o código do funcionário enviado via link.
+			3° - Pesquisar nome, função, login, senha e status em função do código recebido acima.
+			4° - Extrír os dados da pesquisa acima:
+				SE FOR ADMINISTRADOR
+					* Exibir a senha em forma de HTML.
+				SENÃO
+					* Exibir todos os dados extraídos em forma HTML.
+			
+			5° Configuração no formulário
+				* Necessaário enviar o códgo para o outro arquivo.
+				* Necessita enviar a função no formulário do administrador.
 	*/
 ?>
 

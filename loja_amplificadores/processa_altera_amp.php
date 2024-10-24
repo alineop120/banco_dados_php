@@ -1,22 +1,22 @@
 <?php
     /*
-        processa_altera_amp.php
-        1° Conexão com o Banco de dados
-        2° Receber marca, modelo, preço, foto, tipo e código.
-        3° Verificar se foi escolhida nova foto
-            SE foi escolhida
-                * Capturar o nome junto com o caminho relativo (endereço do arquivo).
-                * Fazer o upload da imagem.
-            SENÃO
-                * Pesquisar o caminho relativo já cadastrado no banco de dados em função do código recebido.
-                * Estrair e manter esse dados pesquisado acima.
-        4° Efetuar a alteração
-            SE alterou
-                * Mensagem de sucesso
-                * Vai para lista_amp.php
-            SENÃO 
-                * Mensagem de erro
-                * Voltar para altera_amp.php
+        FUNCIONALIDADE:
+            1° Conexão com o Banco de dados
+            2° Receber marca, modelo, preço, foto, tipo e código.
+            3° Verificar se foi escolhida nova foto
+                SE foi escolhida
+                    * Capturar o nome junto com o caminho relativo (endereço do arquivo).
+                    * Fazer o upload da imagem.
+                SENÃO
+                    * Pesquisar o caminho relativo já cadastrado no banco de dados em função do código recebido.
+                    * Estrair e manter esse dados pesquisado acima.
+            4° Efetuar a alteração
+                SE alterou
+                    * Mensagem de sucesso
+                    * Vai para lista_amp.php
+                SENÃO 
+                    * Mensagem de erro
+                    * Voltar para altera_amp.php
     */
     session_start();
 

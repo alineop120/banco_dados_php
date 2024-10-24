@@ -2,16 +2,16 @@
 	session_start();
 
 	/*
-		cadastra_amp.php
-		1° Configuração o formulário.
-			* method: GET
-			* action: processa_cadastra_amp.php
-			* name(s): Marca,
-						Modelo,
-						Preço,
-						Foto,
-						Tipo
-			* enctype: multipart/form-data
+		FUNCIONALIDADE:
+			1° Configuração o formulário.
+				* method: GET
+				* action: processa_cadastra_amp.php
+				* name(s): Marca,
+							Modelo,
+							Preço,
+							Foto,
+							Tipo
+				* enctype: multipart/form-data
 	*/
 ?>
 

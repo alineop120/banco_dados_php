@@ -2,13 +2,13 @@
 	session_start();
 
 	/*
-		venda.php
-		1° Conexão com o Bando de Dados
-		2° Pesquisar marca, modelo, tipo, preço e código, onde o campo fila_compra_amp é igual a 'n'.
-		Loop -----> {
-			3° Extrair cada registro da pesquisa acima.
-			4° Exibir cada registro extraído acima em tabela HTML
-		} -----> Loop
+		FUNCIONALIDADE:
+			1° Conexão com o Bando de Dados
+			2° Pesquisar marca, modelo, tipo, preço e código, onde o campo fila_compra_amp é igual a 'n'.
+			Loop -----> {
+				3° Extrair cada registro da pesquisa acima.
+				4° Exibir cada registro extraído acima em tabela HTML
+			} -----> Loop
 	*/
 ?>
 
