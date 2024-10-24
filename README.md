@@ -61,4 +61,4 @@
 
 # 4. Mapa do Site
 ![Mapa_Site](/imagens_readme/mapa_site.png)
-\n OBS.: ver_fila_espera.php = ver_fila_compra.php
+\**OBS.: ver_fila_espera.php = ver_fila_compra.php
