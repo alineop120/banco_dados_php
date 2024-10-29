@@ -33,26 +33,71 @@
 			</div>
 		</div>
 
-		<div id="conteudo_especifico">				
+		<div id="conteudo_especifico">
 			<h1> AMPLIFICADORES </h1>
-			
-			
+			<?php
+				$conectar = mysqli_connect ("localhost", "root", "", "364975");			
+				$sql_consulta = "SELECT cod_amp, marca_amp,	modelo_amp, tipo_amp, preco_amp 
+								FROM amplificador";
+				
+				$resultado_consulta = mysqli_query ($conectar, $sql_consulta);		
+			?>
 			<p align="right"> 
 				<a href="cadastra_amp.php"> 
 					Cadastrar amplificador
 				</a> 
 			</p>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-		</div>	
-		
+			<table width="100%">
+				<tr height="50px">
+					<td>
+						<p> Marca </p>
+					</td>
+					<td>
+						<p> Modelo </p>
+					</td>
+					<td>
+						<p> Tipo </p>
+					</td>
+					<td>
+						<p> Preço </p>
+					</td>							
+					<td class="direita">
+						<p> Ação </p>
+					</td>
+				</tr>
+				<?php		
+					while ($registro = mysqli_fetch_row($resultado_consulta))
+					{
+				?>						
+						<tr height="50px">
+							<td>
+								<?php echo $registro[1]; ?>
+							</td>
+							<td>
+								<a href="exibe_amp.php?codigo=<?php echo $registro[0]?>"> 
+									<?php 
+										echo $registro[2];
+									?>
+								</a>
+							</td>
+							<td>
+								<?php echo $registro[3]; ?>							
+							</td>
+							<td>
+								<?php echo $registro[4]; ?>							
+							</td>							
+							<td>
+								<a href="altera_amp.php?codigo=<?php echo $registro[0]?>">
+									Alterar	
+								</a>							
+							</td>
+						</tr>
+				<?php
+					}
+				?>
+			</table>
+		</div>
+
 		<div id="rodape">
 			<div id="texto_institucional">
 				<div id="texto_institucional">
@@ -62,5 +107,6 @@
 			</div>
 		</div>
 
+	</div>
 </body>
 </html>

@@ -1,5 +1,18 @@
 ﻿<?php
 	session_start();
+
+	/*
+		FUNCIONALIDADE:
+			1° Conexão com o Bando de Dados
+			2° Capturar a data do sistema e o código do usuário logado.
+			3° Inserir nova venda.
+			4° Pesquisar o código da venda inserida acima.
+			5° Extrair o código da pesquisa acima.
+			6° Alterar na tabela amplificador o campo fila_compra_amp para 'V' e vendas_cod_ver para o código extraído acima.
+			7° Pesquisar marca, modelo, preço onde o campo vendas_cod_ver é igual ao código extraído acima.
+			8° Extração dos dados acima.
+			9° Exibição em tabela HTML.
+	*/
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +55,7 @@
 			
 			
 			
-				<p> <a href="vendas.php"> Fechar recibo </a> </p>
+			<p> <a href="vendas.php"> Fechar recibo </a> </p>
 		</div>
 
 		<div id="rodape">

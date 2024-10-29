@@ -71,10 +71,10 @@
         {
             $sql_altera = "UPDATE funcionario
                             SET nome_fun = '$nome', 
-					            funcao_fun = '$funcao',
-							    login_fun = '$login',
-							    senha_fun = '$senha',
-							status_fun = '$status'
+                                funcao_fun = '$funcao',
+                                login_fun = '$login',
+                                senha_fun = '$senha',
+                                status_fun = '$status'
                         WHERE cod_fun = '$cod'";
             $sql_resultado_alteracao = mysqli_query ($conectar, $sql_altera);
             if ($sql_resultado_alteracao == true) 
