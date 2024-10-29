@@ -15,7 +15,7 @@
     $conectar = mysqli_connect('localhost', 'root', '', '364975');
     $cod = $_GET["codigo"];
     
-    $sql_altera = "UPDATE amplificadore
+    $sql_altera = "UPDATE amplificador
                     SET fila_compra_amp.php = 'S'
                     WHERE cod_amp = '$cod'";
     $sql_resultado_alteracao = mysqli_query($conectar, $sql_altera);

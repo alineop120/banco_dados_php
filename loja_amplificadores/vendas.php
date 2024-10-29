@@ -81,11 +81,9 @@
 								<?php echo $registro[1]; ?>
 							</td>
 							<td>
-								<a href="exibe_amp.php?codigo=<?php echo $registro[0]?>">
+								<a href="exibe_amp.php?codigo=<?php echo $registro[0]; ?>">
 									<p>
-										<?php
-											echo "$registro[2]";
-										?>
+										<?php echo $registro[2]; ?>
 									</p>
 								</a>
 							</td>
@@ -102,7 +100,7 @@
 								</p>
 							</td>
 							<td>
-								<a href="processa_retira_fila.php?codigo=<?php echo $registro[0]?>">
+								<a href="processa_retira_fila.php?codigo=<?php echo $registro[0]; ?>">
 									Retirar da fila de compras
 								</a>
 							</td>
