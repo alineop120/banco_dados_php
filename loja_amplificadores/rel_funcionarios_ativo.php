@@ -43,48 +43,41 @@
 		<div id="conteudo_especifico">
 			<h1> RELATÓRIO DE FUNCIONÁRIOS ATIVOS</h1>
 			<?php
-				$conectar = mysqli_connect ("localhost", "root", "", "364975");			
+				$conectar = mysqli_connect("localhost", "root", "", "364975");
 
-				$sql_consulta = "SELECT cod_fun, nome_fun, funcao_fun
-								FROM funcionario
-								WHERE status_fun = 'ATIVO'";
-				$resultado_consulta = mysqli_query ($conectar, $sql_consulta);
+				$sql_pesquisa = "SELECT
+									nome_fun,
+									funcao_fun
+								FROM
+									funcionario
+								WHERE 
+									status_fun = 'ativo'";
+				$resultado_pesquisa = mysqli_query ($conectar, $sql_pesquisa);
 			?>
-			<table width="100%">
-				<tr>
-					<th>
-						<p> Nome </p>
-					</th>
-
-					<th>
-						<p> Função </p>
-					</th>
-				</tr>
-				<?php		
-					while ($registro = mysqli_fetch_row($resultado_consulta)) 
-					{											
-				?>						
-				<tr>
+			<table width="100%">	
+				<tr height="50px">
 					<td>
-						<p>
-							<a href="exibe_fun.php?codigo=<?php echo $registro[0]?>"> 
-								<?php 
-									echo "$registro[1]";
-								?>
-							</a>
-						</p>
+						Nome
 					</td>
-
 					<td>
-						<p>									 
-							<?php echo "$registro[2]"; ?>
-						</p>
+						Função
 					</td>
-
 				</tr>
-				<?php
-					}
-				?>
+			<?php
+				while ($registro = mysqli_fetch_row($resultado_pesquisa)) 
+				{
+			?>
+					<tr height="50px">
+						<td>
+							<?php echo $registro[0]?>
+						</td>
+						<td>
+							<?php echo $registro[1]?>
+						</td>
+					</tr>
+			<?php
+				}
+			?>
 			</table>
 			<p> <a href="relatorios.php"> Voltar </a> </p>						
 		</div>	
