@@ -35,7 +35,8 @@
 		<div id="conteudo_especifico">
 			<h1> RELATÓRIOS </h1>
 			<ul type="none">
-				<li><a href="rel_funcionarios.php">Relatório de Funcionários</a></li>
+				<li><a href="rel_funcionarios_ativo.php">Relatório de Funcionários Ativos</a></li>
+				<li><a href="rel_funcionarios_inativo.php">Relatório de Funcionários Inativos</a></li>
 				<li><a href="rel_estoque.php">Relatório de amplificadores em estoque</a></li>
 				<li><a href="rel_total_vendas.php">Faturamento total do mês</a></li>				
 			</ul> 	

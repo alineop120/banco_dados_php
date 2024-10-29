@@ -1,5 +1,13 @@
-﻿<?php
+<?php
 	session_start();
+
+	/*
+		FUNCIONALIDADE:
+		1° Conexão com o banco de dados.
+		2° Pesquisar nome e função dos funcionarios inativos.
+		3° Extrair os registros da pesquisa acima.
+		4° Exibir os dados da extração acima em tabela HTML.
+	*/
 ?>
 
 <!DOCTYPE html>
@@ -33,13 +41,51 @@
 		</div>
 
 		<div id="conteudo_especifico">
-			<h1> RELATÓRIO DE FUNCIONÁRIOS ATIVOS</h1>
-				
-				
-				
-				
-				
-				
+			<h1> RELATÓRIO DE FUNCIONÁRIOS INATIVOS</h1>
+			<?php
+				$conectar = mysqli_connect ("localhost", "root", "", "364975");			
+
+				$sql_consulta = "SELECT cod_fun, nome_fun, funcao_fun
+								FROM funcionario
+								WHERE status_fun = 'inativo'";
+				$resultado_consulta = mysqli_query ($conectar, $sql_consulta);
+			?>
+			<table width="100%">
+				<tr>
+					<th>
+						<p> Nome </p>
+					</th>
+
+					<th>
+						<p> Função </p>
+					</th>
+				</tr>
+				<?php		
+					while ($registro = mysqli_fetch_row($resultado_consulta)) 
+					{											
+				?>						
+				<tr>
+					<td>
+						<p>
+							<a href="exibe_fun.php?codigo=<?php echo $registro[0]?>"> 
+								<?php 
+									echo "$registro[1]";
+								?>
+							</a>
+						</p>
+					</td>
+
+					<td>
+						<p>									 
+							<?php echo "$registro[2]"; ?>
+						</p>
+					</td>
+
+				</tr>
+				<?php
+					}
+				?>
+			</table>
 			<p> <a href="relatorios.php"> Voltar </a> </p>						
 		</div>	
 
